@@ -54,8 +54,11 @@ Replace the logo's with required picture which you imported.
 
 ## DEMO
 
-![alt text](https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/assets/logo.svg?raw=true)
+1. 
 
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/assets/logo.svg?raw=true" alt="alt text" width="200" height="200">
+
+2. 
 
 ## Contributing
 
