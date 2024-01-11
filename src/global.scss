@@ -1,0 +1,470 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope");
+@import url("https://fonts.googleapis.com/css?family=Rubik");
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+
+$card-colour: #cce6ff;
+$black: #606060;
+$blue-colour: #4883e9;
+$footer-color: #efeff5;
+$description: #5c5c8a;
+$dark-blue: #4883e9;
+$darkest-blue: #1b65e4;
+$heading: 3rem;
+$project-heading: 2rem;
+$project-description: 1.2rem;
+$sub-heading: 1.2rem;
+$subtitle: 1rem;
+$sub-heading-small: 0.8rem;
+
+$flex-row-space-between-properties: (
+  display: flex,
+  flex-direction: row,
+  justify-content: space-between,
+);
+
+@mixin flex-row-space-between-container {
+  @each $property, $value in $flex-row-space-between-properties {
+    #{$property}: $value;
+  }
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.App {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.timeline-img {
+  width: 90%;
+}
+
+.timeline-root-container {
+  text-align: center;
+}
+
+.logo-toolbar {
+  font-family: "Sofia", sans-serif;
+  font-size: $sub-heading;
+  color: $dark-blue;
+}
+
+.toolbar-root-container {
+  @include flex-row-space-between-container;
+}
+
+.toolbar-links-container {
+  @include flex-row-space-between-container;
+  align-items: center;
+}
+
+.tool-bar-Label {
+  font-size: $project-description;
+  color: $dark-blue;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.tool-bar-Label::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $darkest-blue;
+  transition: width 0.3s ease;
+}
+
+.tool-bar-Label:hover::before {
+  width: 100%;
+}
+
+.splitter {
+  font-size: $sub-heading;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: $dark-blue;
+  margin-left: 1rem;
+}
+
+.oval-chip {
+  margin-right: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.oval-chip-label {
+  font-weight: bold !important;
+}
+
+.list-text {
+  font-size: $sub-heading;
+}
+
+.skills-root-sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills-root-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.typography-style {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+// OverView Page
+.overview-root-container {
+  height: fit-content;
+}
+
+.overview-root-sub-container {
+  @include flex-row-space-between-container;
+  padding-top: 3rem;
+}
+
+.overview-welcome {
+  font-size: $project-heading;
+  color: $black;
+}
+
+.overview-name {
+  color: $blue-colour;
+  // width: 11ch;
+  // animation: typing 2s steps(11), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 4rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.overview-summary {
+  color: $description;
+  font-size: $subtitle;
+  word-spacing: 0.1em; /* Adjust the value to control the gap size */
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+
+.overview-summary-conclusion {
+  color: $description;
+  font-size: $subtitle;
+  word-spacing: 0.1em; /* Adjust the value to control the gap size */
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
+}
+// Overview page
+
+// Skills
+.title-heading {
+  font-size: $heading;
+  color: $blue-colour;
+  margin-bottom: 4rem;
+  white-space: nowrap !important;
+}
+
+.skills-root-sub-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.skillcard-container {
+  width: 60px;
+  height: 60px;
+  margin-right: 4rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillcard-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.skillcard-name {
+  white-space: nowrap !important;
+}
+// Skills
+
+// Project Card
+.project-root-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+.project-header {
+  font-size: $heading;
+  color: $blue-colour;
+  margin-bottom: 4rem;
+  white-space: nowrap !important;
+}
+
+.project-card-private-text {
+  font-size: $sub-heading-small;
+}
+
+.project-card-private-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.project-card-root-container {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  background-color: $card-colour;
+  border-radius: 2rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.project-card-project-name {
+  font-size: $project-heading;
+}
+
+.project-card-project-subtitle {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.project-card-project-date {
+  font-size: $project-description;
+}
+
+.project-card-info {
+  flex: 60%;
+}
+
+.project-show-more {
+  font-size: 1rem;
+}
+
+.project-showmore-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card-image {
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-logo-round {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+
+.project-logo {
+  width: 320px;
+  height: 150px;
+}
+
+.project-card-tech-chips {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project-root-container {
+  margin-bottom: 2rem;
+}
+// Project Card
+
+// about me
+.about-me-root {
+  margin: 1rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-me-para {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+}
+
+.about-me-image {
+  text-align: center;
+  align-self: center;
+  flex: 30%;
+  margin-right: 2rem;
+}
+
+.about-me-content {
+  flex: 70%;
+}
+
+.about-me-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+// about me
+
+// certificate
+.certificate-root-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.certificate-root-container > div {
+  flex: 30%;
+}
+
+.certificate-card-container {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  height: 220px;
+  border-radius: 2rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 2rem;
+  border: 0.2px solid black;
+}
+
+.certificate-card-logo {
+  width: 60px;
+  height: 50px;
+}
+
+.certificate-card-details {
+  text-align: center;
+}
+
+.certificate-card-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.certificate-card-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+// certificate
+
+// Test
+
+.testimonials-root {
+  margin-bottom: 2rem;
+}
+
+.testimonials-root-container {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.testimonials-recommendation-root {
+  border: 1px solid $blue-colour;
+  border-radius: 2rem;
+  display: flex;
+  height: max-content;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.testimonials-recommendation-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.testimonials-recommendation-personalInfo {
+  margin-left: 2rem;
+}
+
+.testimonials-nav-button {
+  align-self: center;
+  height: 3rem;
+}
+
+.testimonials-recommendation-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.testimonials-recommendation-personalInfo-name {
+  font-size: $sub-heading;
+  font-weight: bold;
+}
+
+.testimonials-recommendation-personalInfo-details {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.testimonials-recommendation-relation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.testimonials-recommendation-picture {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+// Test
+
+// footer
+.footer-root-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $footer-color;
+}
+// footer
+
+// media queries
+@media (max-width: 900px) {
+  .project-card-image {
+    display: none; // Hide the .font class on screens less than 700px
+  }
+}
+// media queries
