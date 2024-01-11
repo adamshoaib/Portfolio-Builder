@@ -52,6 +52,11 @@ Replace the logo's with required picture which you imported.
 
 4. Save and refresh the page.
 
+## DEMO
+
+![alt text](https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/assets/logo.svg?raw=true)
+
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
