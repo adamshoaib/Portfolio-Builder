@@ -56,28 +56,28 @@ Replace the logo's with required picture which you imported.
 
 1. Tool bar with customisable links, logo. Name with animation followed with profile overview.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-1.png?raw=true" alt="alt text" width="500" height="300">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-1.png?raw=true" alt="alt text" width="1000" height="300">
 
 2. Add as many technical skills, with auto alignment and positioning.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-2.png?raw=true" alt="alt text" width="500" height="300">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-2.png?raw=true" alt="alt text" width="1000" height="300">
 
 3. Add projects with logo, project description link, project live demo link, and contributons automatically converted to unordered list. Show more button is automatically rendered when there are more than 3 projects.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-3.png?raw=true" alt="alt text" width="500" height="400">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-3.png?raw=true" alt="alt text" width="1000" height="400">
 
 4. Add certifications, with name, description, issues date, expiry date, certificate id, onclick links.
    Show more button is automatically rendered when there are more than 4 certificates.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="500" height="400">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="1000" height="400">
 
 5. Add testimonials from your linked in profile. With all the details that shows up on the linked recommendations.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="500" height="400">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="1000" height="400">
 
 6. Add description about you and your picture, each new string is automatically converted to a paragraph.
 
-<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="500" height="400">
+<img src="https://github.com/adamshoaib/Portfolio-Builder/blob/master/src/screenshots/Image-4.png?raw=true" alt="alt text" width="1000" height="400">
 
 ## Contributing
 
