@@ -61,6 +61,8 @@ export default function Certificate({ certificatesData }) {
     const dataLength = certificatesData?.certificates?.length || 0;
     if (dataLength > 4) {
       setCertificateList(certificatesData?.certificates?.slice(0, 4));
+    } else {
+      setCertificateList(certificatesData?.certificates);
     }
   };
 
@@ -88,7 +90,7 @@ export default function Certificate({ certificatesData }) {
           })}
         </div>
       </div>
-      {showButton && (
+      {certificateList.length > 4 && showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
@@ -103,7 +105,7 @@ export default function Certificate({ certificatesData }) {
           </Btn>
         </div>
       )}
-      {!showButton && (
+      {certificateList.length > 4 && !showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
