@@ -7,8 +7,27 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Splitter from "../atoms/Splitter";
 import CodeIcon from "@mui/icons-material/Code";
 import { Typography } from "@mui/material";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
+import ThemeSwitch from "../molecules/ThemeSwitch";
 
-export default function ToolBar({ toolbarData, changeSelection, selected }) {
+export default function ToolBar({
+  toolbarData,
+  changeSelection,
+  selected,
+  themeChanged,
+}) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const scrollToTarget = (target) => {
     const targetSection = document.getElementById(target);
 
@@ -37,7 +56,7 @@ export default function ToolBar({ toolbarData, changeSelection, selected }) {
             {toolbarData?.logoLetters}
           </Typography>
         ) : (
-          <Icon color={"#4883e9"} mr={2}>
+          <Icon color={"#4883e9"} className="tool-bar-icon" mr={2}>
             <CodeIcon />
           </Icon>
         )}
@@ -51,21 +70,33 @@ export default function ToolBar({ toolbarData, changeSelection, selected }) {
           >
             HOME
           </Btn>
-          <Btn
-            onClick={() => changeSelection("About")}
-            labelClassName="tool-bar-Label"
-          >
-            ABOUT ME
-          </Btn>
           {selected === "Home" && (
-            <Btn
-              onClick={() => {
-                scrollToTarget("project-root-container");
-              }}
-              labelClassName="tool-bar-Label"
-            >
-              PROJECTS
-            </Btn>
+            <>
+              <Btn
+                onClick={() => {
+                  scrollToTarget("skills-root-container");
+                }}
+                labelClassName="tool-bar-Label"
+              >
+                SKILLS
+              </Btn>
+
+              <Btn
+                onClick={() => changeSelection("About")}
+                labelClassName="tool-bar-Label"
+              >
+                ABOUT ME
+              </Btn>
+
+              <Btn
+                onClick={() => {
+                  scrollToTarget("project-root-container");
+                }}
+                labelClassName="tool-bar-Label"
+              >
+                PROJECTS
+              </Btn>
+            </>
           )}
           <Btn
             onClick={() => {
@@ -84,6 +115,7 @@ export default function ToolBar({ toolbarData, changeSelection, selected }) {
                 onLinkedInClick();
               }}
               mr={2}
+              className="tool-bar-icon"
             >
               <LinkedInIcon />
             </Icon>
@@ -93,6 +125,7 @@ export default function ToolBar({ toolbarData, changeSelection, selected }) {
               onClick={() => {
                 onGitHubClickOne();
               }}
+              className="tool-bar-icon"
               mr={2}
             >
               <GitHubIcon />
@@ -103,12 +136,86 @@ export default function ToolBar({ toolbarData, changeSelection, selected }) {
               onClick={() => {
                 onInstagramClick();
               }}
+              className="tool-bar-icon"
               mr={2}
             >
               <InstagramIcon />
             </Icon>
           )}
+          <ThemeSwitch
+            themeChanged={(e) => {
+              themeChanged(e);
+            }}
+          />
         </div>
+      </div>
+
+      <div className="hamburger-toolbar">
+        <ThemeSwitch
+          themeChanged={(e) => {
+            themeChanged(e);
+          }}
+        />
+        <Icon className="tool-bar-icon" onClick={handleClick}>
+          <MenuIcon />
+        </Icon>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              changeSelection("Home");
+            }}
+            className="dropdown-menu"
+          >
+            HOME
+          </MenuItem>
+          {selected === "Home" && (
+            <MenuItem
+              onClick={() => {
+                handleClose();
+                scrollToTarget("skills-root-container");
+              }}
+            >
+              SKILLS
+            </MenuItem>
+          )}
+          {selected === "Home" && (
+            <MenuItem
+              onClick={() => {
+                handleClose();
+                changeSelection("About");
+              }}
+            >
+              ABOUT ME
+            </MenuItem>
+          )}
+          {selected === "Home" && (
+            <MenuItem
+              onClick={() => {
+                handleClose();
+                scrollToTarget("project-root-container");
+              }}
+            >
+              PROJECTS
+            </MenuItem>
+          )}
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              window.open(toolbarData?.resumeLink, "_blank");
+            }}
+          >
+            RESUME
+          </MenuItem>
+        </Menu>
       </div>
     </div>
   );

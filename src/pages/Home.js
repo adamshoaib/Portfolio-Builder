@@ -9,6 +9,8 @@ import { MyInformation } from "../Info/Info";
 import Certificate from "../components/organisms/Certificate";
 import Testimonials from "../components/organisms/Testimonials";
 import Footer from "../components/organisms/Footer";
+import Experience from "../components/organisms/Experience";
+import GitHubCalender from "../components/organisms/GitHubCalender";
 
 class Home extends Component {
   constructor() {
@@ -33,8 +35,9 @@ class Home extends Component {
       certificatesData,
       testimonialsData,
       footerData,
+      experienceData,
+      githubData,
     } = MyInformation;
-
     return (
       <div className="root-container">
         <ToolBar
@@ -43,28 +46,34 @@ class Home extends Component {
           changeSelection={(data) => {
             this.onSelectionChange(data);
           }}
+          themeChanged={(data) => {
+            this.props.themeChanged(data);
+          }}
         />
         {selection === "Home" ? (
           <>
             <Overview overviewData={overviewData} />
-            <Skills skillsData={skillsData} />
-            {timeLineData && timeLineData.timeLineImage && (
-              <Timeline timeLineData={timeLineData} />
-            )}
+            {experienceData && <Experience experienceData={experienceData} />}
             <Projects projectsData={projectsData} />
             {certificatesData && certificatesData.certificates && (
               <Certificate certificatesData={certificatesData} />
             )}
+            <Skills skillsData={skillsData} />
             {testimonialsData &&
               testimonialsData.TestimonialsList &&
               testimonialsData.TestimonialsList.length > 0 && (
                 <Testimonials testimonialsData={testimonialsData} />
               )}
+            {githubData && <GitHubCalender githubData={githubData} />}
             <Footer footerData={footerData} />
           </>
         ) : (
           <>
-            <AboutMe aboutMeData={aboutMeData} />
+            <AboutMe
+              aboutMeData={aboutMeData}
+              timeLineData={timeLineData}
+              githubData={githubData}
+            />
           </>
         )}
       </div>

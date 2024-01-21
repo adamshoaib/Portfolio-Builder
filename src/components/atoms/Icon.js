@@ -7,6 +7,7 @@ export default function Icon({
   onClick,
   size = "large",
   mr = 0,
+  className
 }) {
   return (
     <>
@@ -15,6 +16,7 @@ export default function Icon({
         size={size}
         edge="start"
         aria-label="menu"
+        className={className}
         sx={{ mr: mr, color: color }}
       >
         {children}

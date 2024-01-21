@@ -23,7 +23,7 @@ const CertificateCard = ({ data }) => {
             />
           </div>
           <div>
-            <Icon size="30">
+            <Icon className="tool-bar-icon" size="30">
               <VerifiedIcon />
             </Icon>
           </div>
@@ -53,24 +53,14 @@ const CertificateCard = ({ data }) => {
 export default function Certificate({ certificatesData }) {
   const [certificateList, setCertificateList] = React.useState([]);
   const [showButton, setShowButton] = React.useState(true);
-  const [displayButtons, setDisplayButtons] = React.useState(true);
-
   React.useEffect(() => {
     setCertificates();
   }, []);
 
-  console.log(
-    "certificatesData?.certificates :",
-    certificatesData?.certificates
-  );
-
   const setCertificates = () => {
     const dataLength = certificatesData?.certificates?.length || 0;
-    if (dataLength > 2) {
-      setCertificateList(certificatesData?.certificates?.slice(0, 2));
-    } else {
-      setCertificateList(certificatesData?.certificates);
-      setDisplayButtons(false);
+    if (dataLength > 4) {
+      setCertificateList(certificatesData?.certificates?.slice(0, 4));
     }
   };
 
@@ -83,7 +73,6 @@ export default function Certificate({ certificatesData }) {
     setCertificateList(certificatesData?.certificates);
     setShowButton(false);
   };
-
   return (
     <>
       <div className="skills-root-header">
@@ -99,7 +88,7 @@ export default function Certificate({ certificatesData }) {
           })}
         </div>
       </div>
-      {displayButtons && showButton && (
+      {showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
@@ -108,12 +97,13 @@ export default function Certificate({ certificatesData }) {
               showAllProjects();
             }}
             labelClassName="project-show-more"
+            buttonClassName="button-show-more"
           >
             Show More
           </Btn>
         </div>
       )}
-      {displayButtons && !showButton && (
+      {!showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
@@ -121,6 +111,7 @@ export default function Certificate({ certificatesData }) {
             onClick={() => {
               showLessProjects();
             }}
+            buttonClassName="button-show-more"
             labelClassName="project-show-more"
           >
             Show Less

@@ -1,6 +1,8 @@
 # Portfolio Builder
 
 Build your professional Portfolio in just 5 minutes. All you have to do is just fill in a simple form.
+This project has responsive design, works both on desktop and mobile.
+Toggle between dark and light modes.
 
 ## Installation
 

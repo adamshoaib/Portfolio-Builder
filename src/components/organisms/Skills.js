@@ -16,9 +16,9 @@ const SkillCard = ({ skill }) => {
 };
 export default function Skills({ skillsData }) {
   return (
-    <div className="skills-root-container">
+    <div id="skills-root-container" className="skills-root-container">
       <div className="skills-root-header">
-        <Typography className={"title-heading"}>
+        <Typography className={"project-header"}>
           {skillsData?.skillHeader}
         </Typography>
         <Line />

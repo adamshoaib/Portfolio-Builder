@@ -51,8 +51,8 @@ export default function ProjectCard({ data }) {
             onClick={() => {
               handleClick(data?.projectLink);
             }}
-            backgroundColor="white"
             variant="outlined"
+            buttonClassName="button-show-more"
             style={{ marginRight: "1rem", marginBottom: "0.2rem" }}
           >
             View Project Details
@@ -65,6 +65,7 @@ export default function ProjectCard({ data }) {
             }}
             backgroundColor="white"
             variant="outlined"
+            buttonClassName="button-show-more"
           >
             View Website
           </Btn>
@@ -72,7 +73,7 @@ export default function ProjectCard({ data }) {
         {data?.isPrivate && (
           <div className="project-card-private-container">
             <div>
-              <Icon size="small">
+              <Icon className="tool-bar-icon" size="small">
                 <LockIcon />
               </Icon>
             </div>
