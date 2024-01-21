@@ -20,6 +20,7 @@ export default function Footer({ footerData }) {
             onClick={() => {
               onLinkedInClick();
             }}
+            className="tool-bar-icon"
             mr={2}
           >
             <LinkedInIcon />
@@ -30,6 +31,7 @@ export default function Footer({ footerData }) {
             onClick={() => {
               onEmailIdClick();
             }}
+            className="tool-bar-icon"
             mr={2}
           >
             <EmailIcon />

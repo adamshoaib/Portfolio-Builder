@@ -4,12 +4,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata");
 
-$card-colour: #cce6ff;
-$black: #606060;
-$blue-colour: #4883e9;
+$blue-colour: #679cf7;
 $footer-color: #efeff5;
-$description: #5c5c8a;
-$dark-blue: #4883e9;
+$dark-blue: #7199de;
 $darkest-blue: #1b65e4;
 $heading: 3rem;
 $project-heading: 2rem;
@@ -17,6 +14,7 @@ $project-description: 1.2rem;
 $sub-heading: 1.2rem;
 $subtitle: 1rem;
 $sub-heading-small: 0.8rem;
+$dark-background-color: rgb(10, 8, 46);
 
 $flex-row-space-between-properties: (
   display: flex,
@@ -30,17 +28,70 @@ $flex-row-space-between-properties: (
   }
 }
 
+:root {
+  --background-color: #ffffff;
+  --primary-text-color: #0f0f0f;
+  --description-color: #5c5c8a;
+  --experience-card-background: #f5f5f5;
+  --project-card-background: rgb(244, 244, 248);
+  --project-card-background-mobile: rgb(244, 244, 248);
+  --overview-text-color: #606060;
+  --tool-bar-icon-color: #0f0f0f;
+  --footer-background: #ffffff;
+  --chip-background-color: #d7dfe3;
+  --chip-font-color: #0f0f0f;
+  --experience-mobile-card-background: rgb(244, 244, 248);
+  --experience-card-shadow: rgb(189, 189, 200);
+  --project-card-background-shadow: rgb(185, 185, 189);
+  --certificate-border-color: #0f0f0f;
+  --certificate-background-color: rgb(244, 244, 248);
+  --button-color: rgb(255, 255, 255);
+}
+
+[dark-theme="dark"] {
+  --background-color: rgb(10, 8, 46);
+  --primary-text-color: #d9d7d7;
+  --description-color: #d9d7d7;
+  --experience-card-background: rgb(10, 8, 46);
+  --project-card-background: rgb(58, 57, 57);
+  --project-card-background-mobile: rgb(10, 8, 46);
+  --overview-text-color: #d9d7d7;
+  --tool-bar-icon-color: #e1ebf4;
+  --footer-background: rgb(10, 8, 46);
+  --chip-background-color: #aba8a8;
+  --chip-font-color: #0f0f0f;
+  --experience-mobile-card-background: rgb(10, 8, 46);
+  --experience-card-shadow: rgb(28, 23, 113);
+  --project-card-background-shadow: rgb(89, 87, 87);
+  --certificate-border-color: #679cf7;
+  --certificate-background-color: rgb(16, 13, 78);
+  --button-color: rgb(205, 202, 202);
+}
+
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .App {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+}
+
+.app-root-container {
   width: 80%;
   margin: 0 auto;
 }
 
 .timeline-img {
   width: 90%;
+}
+
+.timeline-container {
+  margin-bottom: 2rem !important;
+}
+
+.git-hub-calender-container {
+  margin-bottom: 4rem;
 }
 
 .timeline-root-container {
@@ -50,7 +101,7 @@ body {
 .logo-toolbar {
   font-family: "Sofia", sans-serif;
   font-size: $sub-heading;
-  color: $dark-blue;
+  color: var(--tool-bar-icon-color);
 }
 
 .toolbar-root-container {
@@ -64,8 +115,12 @@ body {
 
 .tool-bar-Label {
   font-size: $project-description;
-  color: $dark-blue;
+  color: var(--tool-bar-icon-color);
   font-family: "Inconsolata", sans-serif;
+}
+
+.tool-bar-icon {
+  color: var(--tool-bar-icon-color) !important;
 }
 
 .tool-bar-Label::before {
@@ -103,15 +158,18 @@ body {
 
 .oval-chip-label {
   font-weight: bold !important;
+  color: var(--chip-font-color) !important;
+  background-color: var(--chip-background-color) !important;
 }
 
 .list-text {
-  font-size: $sub-heading;
+  font-size: 1.1rem;
 }
 
 .skills-root-sub-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -139,18 +197,16 @@ body {
 
 .overview-welcome {
   font-size: $project-heading;
-  color: $black;
+  color: var(--overview-text-color);
 }
 
 .overview-name {
   color: $blue-colour;
-  // width: 11ch;
-  // animation: typing 2s steps(11), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   font-family: monospace;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 @keyframes typing {
@@ -166,18 +222,16 @@ body {
 }
 
 .overview-summary {
-  color: $description;
+  color: var(--description-color);
   font-size: $subtitle;
   word-spacing: 0.1em; /* Adjust the value to control the gap size */
-  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
 }
 
 .overview-summary-conclusion {
-  color: $description;
+  color: var(--description-color);
   font-size: $subtitle;
   word-spacing: 0.1em; /* Adjust the value to control the gap size */
-  font-family: "Montserrat", sans-serif;
   margin-top: 1rem;
 }
 // Overview page
@@ -186,7 +240,7 @@ body {
 .title-heading {
   font-size: $heading;
   color: $blue-colour;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   white-space: nowrap !important;
 }
 
@@ -199,12 +253,17 @@ body {
 .skillcard-container {
   width: 60px;
   height: 60px;
-  margin-right: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.testimonials-arrow {
+  color: var(--tool-bar-icon-color);
 }
 
 .skillcard-logo {
@@ -224,6 +283,7 @@ body {
   justify-content: flex-end;
   align-items: baseline;
 }
+
 .project-header {
   font-size: $heading;
   color: $blue-colour;
@@ -238,21 +298,34 @@ body {
 .project-card-private-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-top: 1rem;
+}
+
+.project-card-project-overview {
+  font-size: $sub-heading;
 }
 
 .project-card-root-container {
   display: flex;
   flex-direction: row;
   height: fit-content;
-  background-color: $card-colour;
+  background-color: var(--project-card-background);
+  border: 1px solid rgb(58, 57, 57);
   border-radius: 2rem;
   padding: 1rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-family: "Rubik", sans-serif;
   margin-bottom: 2rem;
+}
+
+.project-card-root-container {
+  transition: box-shadow 0.3s;
+}
+
+.project-card-root-container:hover {
+  box-shadow: 0 0px 4px 4px var(--project-card-background-shadow);
 }
 
 .project-card-project-name {
@@ -284,20 +357,20 @@ body {
 }
 
 .project-card-image {
-  flex: 40%;
+  flex: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .project-logo-round {
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
 .project-logo {
-  width: 320px;
+  width: 250px;
   height: 150px;
 }
 
@@ -313,15 +386,17 @@ body {
 // Project Card
 
 // about me
+.aboutme-container {
+  padding-bottom: 5rem;
+}
 .about-me-root {
-  margin: 1rem;
-  margin-top: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
 }
 
 .about-me-para {
-  font-family: "Montserrat", sans-serif;
   line-height: 1.4;
 }
 
@@ -346,25 +421,44 @@ body {
 // certificate
 .certificate-root-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-}
-
-.certificate-root-container > div {
-  flex: 30%;
+  justify-content: center;
 }
 
 .certificate-card-container {
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  height: 220px;
+  flex: 40%;
   border-radius: 2rem;
   padding: 1rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-family: "Rubik", sans-serif;
   margin-bottom: 2rem;
-  border: 0.2px solid black;
+  flex-wrap: wrap;
+  border: 0.2px solid var(--certificate-border-color);
+  background-color: var(--certificate-background-color);
+}
+
+.button-show-more {
+  background-color: var(--button-color) !important;
+}
+
+.button-show-more {
+  transition: box-shadow 0.3s;
+}
+
+.button-show-more:hover {
+  box-shadow: 0 0px 4px 4px var(--project-card-background-shadow);
+}
+
+.certificate-card-container {
+  transition: box-shadow 0.3s;
+}
+
+.certificate-card-container:hover {
+  box-shadow: 0 0px 4px 4px var(--project-card-background-shadow);
 }
 
 .certificate-card-logo {
@@ -390,6 +484,17 @@ body {
 
 // Test
 
+.testimonials-root-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.MuiPaginationItem-root {
+  color: var(--overview-text-color) !important;
+}
+
 .testimonials-root {
   margin-bottom: 2rem;
 }
@@ -413,7 +518,6 @@ body {
   display: flex;
   flex-direction: row;
 }
-
 .testimonials-recommendation-personalInfo {
   margin-left: 2rem;
 }
@@ -439,10 +543,26 @@ body {
   margin: 0;
 }
 
+.testimonials-spllitter {
+  display: block;
+}
+
 .testimonials-recommendation-relation {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.testimonials-realtion {
+  line-height: 1.4;
+}
+
+.testimonials-buttons {
+  display: block;
+  align-self: center;
+}
+.testimonials-button-top {
+  display: none;
 }
 
 .testimonials-recommendation-picture {
@@ -457,14 +577,241 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: $footer-color;
+  background-color: var(--footer-background);
 }
 // footer
 
+//hamburger
+
+//hamburger
+.hamburger-toolbar {
+  display: none;
+}
 // media queries
-@media (max-width: 900px) {
-  .project-card-image {
-    display: none; // Hide the .font class on screens less than 700px
+
+// experience
+.experience-company-heading {
+  font-size: $sub-heading;
+  font-weight: bold;
+}
+
+.experience-company-designation {
+  font-size: $subtitle;
+}
+
+.experience-content-card-root-right {
+  display: flex;
+  justify-content: start;
+}
+
+.experience-content-card-root-left {
+  display: flex;
+  justify-content: end;
+}
+
+.experience-company-date {
+  font-size: $sub-heading-small;
+}
+
+.experience-content-card {
+  max-width: max-content;
+  border: 0.2px solid $dark-blue;
+  border-radius: 2rem;
+  background-color: var(--experience-card-background);
+  padding: 1.5rem;
+}
+
+.experience-content-card {
+  transition: box-shadow 0.3s;
+}
+
+.experience-content-card:hover {
+  box-shadow: 0 8px 8px 2px var(--experience-card-shadow);
+}
+
+.experience-content {
+  text-align: left;
+}
+
+.experience-logo {
+  width: 35px;
+  height: 30px;
+}
+
+// experience mobile
+.experience-desktop-main {
+  display: block;
+}
+
+.experience-mobile-main {
+  display: none;
+}
+
+.experience-mobile-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.experience-logo-mobile {
+  width: 60px;
+  height: 60px;
+}
+
+.experience-mobile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-mobile-image {
+  margin-right: 2rem;
+}
+
+.experience-content-card-mobile {
+  max-width: max-content;
+  border: 1px solid $blue-colour;
+  border-radius: 2rem;
+  background-color: var(--experience-mobile-card-background);
+  padding: 1.5rem;
+}
+
+.experience-content-card-mobile {
+  transition: box-shadow 0.3s;
+}
+
+.experience-content-card-mobile:hover {
+  box-shadow: 0 8px 8px 2px var(--experience-card-shadow);
+}
+
+.github-contributions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+// experince mobile
+// experience
+
+@media (max-width: 1050px) {
+  .about-me-image {
+    display: none;
+  }
+  .experience-desktop-main {
+    display: none;
+  }
+
+  .experience-mobile-main {
+    display: block;
+  }
+  .certificate-root-container {
+    flex-direction: column;
   }
 }
+
+@media (max-width: 900px) {
+  .project-card-image {
+    display: none;
+  }
+  .hamburger-toolbar {
+    display: block;
+  }
+  .toolbar-links-container {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .testimonials-recommendation-info {
+    flex-direction: column;
+  }
+  .testimonials-recommendation-relation {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .testimonials-recommendation-personalInfo {
+    margin-left: 0.2rem;
+  }
+  .testimonials-spllitter {
+    display: none;
+  }
+  .testimonials-realtion {
+    margin-top: 0;
+  }
+  .testimonials-buttons {
+    display: none;
+  }
+  .testimonials-root-container {
+    flex-direction: column;
+  }
+  .testimonials-button-top {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header {
+    font-size: $project-heading;
+  }
+  .overview-name {
+    font-size: 2.4rem;
+  }
+  .overview-welcome {
+    font-size: 1.6rem;
+  }
+  .project-header {
+    white-space: wrap !important;
+  }
+
+  .skillcard-container {
+    width: 30px;
+    height: 30px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skillcard-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skillcard-name {
+    white-space: nowrap !important;
+    font-size: 0.8rem;
+  }
+
+  .project-card-project-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .project-card-project-overview,
+  .project-card-project-date,
+  .list-text {
+    font-size: $subtitle;
+  }
+
+  .project-card-root-container {
+    background-color: var(--project-card-background-mobile);
+    border: 1px solid $blue-colour;
+  }
+
+  .oval-chip-label {
+    font-size: 0.7rem;
+  }
+}
+
 // media queries

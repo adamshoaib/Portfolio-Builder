@@ -7,7 +7,6 @@ import Btn from "../atoms/Btn";
 export default function Projects({ projectsData }) {
   const [projectList, setProjectList] = React.useState([]);
   const [showButton, setShowButton] = React.useState(true);
-  const [displayButtons, setDisplayButtons] = React.useState(true);
   React.useEffect(() => {
     setProjects();
   }, []);
@@ -16,9 +15,6 @@ export default function Projects({ projectsData }) {
     const dataLength = projectsData?.Project_List?.length || 0;
     if (dataLength > 2) {
       setProjectList(projectsData?.Project_List?.slice(0, 2));
-    } else {
-      setProjectList(projectsData?.Project_List);
-      setDisplayButtons(false);
     }
   };
 
@@ -44,8 +40,8 @@ export default function Projects({ projectsData }) {
         {projectList?.map((project, index) => {
           return <ProjectCard key={index} data={project} />;
         })}
-      </div>
-      {displayButtons && showButton && (
+      </div> 
+      {showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
@@ -54,12 +50,13 @@ export default function Projects({ projectsData }) {
               showAllProjects();
             }}
             labelClassName="project-show-more"
+            buttonClassName="button-show-more"
           >
             Show More
           </Btn>
         </div>
       )}
-      {displayButtons && !showButton && (
+      {!showButton && (
         <div className="project-showmore-button">
           <Btn
             color="primary"
@@ -67,6 +64,7 @@ export default function Projects({ projectsData }) {
             onClick={() => {
               showLessProjects();
             }}
+            buttonClassName="button-show-more"
             labelClassName="project-show-more"
           >
             Show Less

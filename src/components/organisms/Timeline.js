@@ -4,7 +4,7 @@ import Line from "../atoms/Line";
 
 export default function Timeline({ timeLineData }) {
   return (
-    <div>
+    <div className="timeline-container">
       <div className="project-root-header">
         <Typography className={"project-header"}>
           {timeLineData?.header}

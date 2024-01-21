@@ -2,7 +2,7 @@ import Logo from "../assets/logo.svg";
 
 export const MyInformation = {
   toolbarData: {
-    logoLetters: "John",
+    logoLetters: "Signature",
     resumeLink: "https://www.lipsum.com/",
     linkedInUrl: "https://www.lipsum.com/",
     instaGramUrl: "https://www.lipsum.com/",
@@ -24,6 +24,12 @@ export const MyInformation = {
       { name: "Skill 4", logo: Logo },
       { name: "Skill 5", logo: Logo },
       { name: "Skill 6", logo: Logo },
+      { name: "Skill 7", logo: Logo },
+      { name: "Skill 8", logo: Logo },
+      { name: "Skill 9", logo: Logo },
+      { name: "Skill 10", logo: Logo },
+      { name: "Skill 11", logo: Logo },
+      { name: "Skill 12", logo: Logo },
     ],
   },
   projectsData: {
@@ -73,11 +79,29 @@ export const MyInformation = {
           "Contributon 3",
           "Contributon 4",
         ],
-        projectLink: "",
         websitelink: "https://www.lipsum.com/",
         technologies: ["Tech used 1", "Tech used 2", "Tech used 3"],
       },
+      {
+        name: "Project Three",
+        date: "01 January 2024",
+        logo: Logo,
+        logoRound: true,
+        overview: "Give an Overview here",
+        contributions: [
+          "Contributon 1",
+          "Contributon 2",
+          "Contributon 3",
+          "Contributon 4",
+        ],
+        isPrivate: true,
+        technologies: ["Tech used 1", "Tech used 2", "Tech used 3"],
+      },
     ],
+  },
+  githubData: {
+    header: "Git Hub",
+    userName: "adamshoaibk",
   },
   // timeLineData: {
   //   header: "Timeline",
@@ -176,5 +200,47 @@ export const MyInformation = {
   footerData: {
     linkedInUrl: "",
     emailId: "mail@gmail.com",
+  },
+  experienceData: {
+    header: "Experience",
+    experienceList: [
+      {
+        companyName: "Company Name 1",
+        logo: Logo,
+        designation: "Designation 1",
+        date: "Start date - End date",
+        description: [
+          "Overview of your experience. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        ],
+      },
+      {
+        companyName: "Company Name 2",
+        logo: Logo,
+        designation: "Designation 2",
+        date: "Start date - End date",
+        description: [
+          "Overview of your experience. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        ],
+      },
+      {
+        companyName: "Company Name 3",
+        logo: Logo,
+        designation: "Designation 3",
+        date: "Start date - End date",
+        description: [
+          "Overview of your experience. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        ],
+      },
+      {
+        companyName: "Company Name 4",
+        logo: Logo,
+        designation: "Designation 4",
+        date: "Start date - End date",
+        description: [
+          "Overview of your experience. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        ],
+      },
+     
+    ],
   },
 };
